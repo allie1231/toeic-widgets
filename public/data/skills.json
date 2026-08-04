@@ -1,0 +1,8 @@
+{
+  "periodLabel": "최근 오답",
+  "skills": [
+    { "name": "형용사", "countLabel": "12회", "level": 100, "ariaLabel": "형용사 오답 12회", "progressAriaLabel": "형용사 취약도 100%" },
+    { "name": "추론", "countLabel": "8회", "level": 67, "ariaLabel": "추론 오답 8회", "progressAriaLabel": "추론 취약도 67%" },
+    { "name": "NOT 문제", "countLabel": "6회", "level": 50, "ariaLabel": "NOT 문제 오답 6회", "progressAriaLabel": "NOT 문제 취약도 50%" }
+  ]
+}

@@ -12,25 +12,21 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">Weak Skills</h1>
-      <span class="widget-meta">최근 오답</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/skills.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title">Weak Skills</h1>
+        <span class="widget-meta" data-bind="periodLabel"></span>
+      </header>
 
-    <div class="list">
-      <section class="list-item" aria-label="형용사 오답 12회">
-        <div class="list-item__header"><span class="list-item__label">형용사</span><span class="list-item__value">12회</span></div>
-        <div class="progress" data-progress="100" aria-label="형용사 취약도"><div class="progress__fill"></div></div>
-      </section>
-      <section class="list-item" aria-label="추론 오답 8회">
-        <div class="list-item__header"><span class="list-item__label">추론</span><span class="list-item__value">8회</span></div>
-        <div class="progress" data-progress="67" aria-label="추론 취약도"><div class="progress__fill"></div></div>
-      </section>
-      <section class="list-item" aria-label="NOT 문제 오답 6회">
-        <div class="list-item__header"><span class="list-item__label">NOT 문제</span><span class="list-item__value">6회</span></div>
-        <div class="progress" data-progress="50" aria-label="NOT 문제 취약도"><div class="progress__fill"></div></div>
-      </section>
+      <div class="list">
+        <template data-repeat="skills">
+          <section class="list-item" data-bind-aria-label="ariaLabel">
+            <div class="list-item__header"><span class="list-item__label" data-bind="name"></span><span class="list-item__value" data-bind="countLabel"></span></div>
+            <div class="progress" data-progress-bind="level" data-bind-aria-label="progressAriaLabel"><div class="progress__fill"></div></div>
+          </section>
+        </template>
+      </div>
     </div>
   </article>
 </body>
