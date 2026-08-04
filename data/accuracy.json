@@ -1,8 +1,20 @@
 {
-  "periodLabel": "Last test",
+  "periodLabel": "No mock test yet",
   "parts": [
-    { "name": "P5", "accuracy": 92, "ariaLabel": "파트 5 정답률 92%" },
-    { "name": "P6", "accuracy": 84, "ariaLabel": "파트 6 정답률 84%" },
-    { "name": "P7", "accuracy": 73, "ariaLabel": "파트 7 정답률 73%" }
+    {
+      "name": "P5",
+      "accuracy": null,
+      "ariaLabel": "P5 정답률 기록 없음"
+    },
+    {
+      "name": "P6",
+      "accuracy": null,
+      "ariaLabel": "P6 정답률 기록 없음"
+    },
+    {
+      "name": "P7",
+      "accuracy": null,
+      "ariaLabel": "P7 정답률 기록 없음"
+    }
   ]
 }

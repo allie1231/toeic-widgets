@@ -1,17 +1,38 @@
 {
   "periodLabel": "This week",
-  "hours": 2,
-  "minutes": 14,
-  "durationAriaLabel": "2시간 14분",
-  "summary": "오늘 · 목표 3시간의 74%",
-  "chartSummary": "이번 주 일별 학습량은 월 24%, 화 52%, 수 38%, 목 72%, 금 64%, 토 90%, 일 74%입니다.",
+  "hours": 0,
+  "minutes": 0,
+  "durationAriaLabel": "이번 주 학습 시간 0분",
+  "summary": "0 min this week · 학습 로그를 추가해 주세요.",
+  "chartSummary": "이번 주 학습 기록이 아직 없습니다.",
   "days": [
-    { "label": "월", "percent": 24 },
-    { "label": "화", "percent": 52 },
-    { "label": "수", "percent": 38 },
-    { "label": "목", "percent": 72 },
-    { "label": "금", "percent": 64 },
-    { "label": "토", "percent": 90 },
-    { "label": "일", "percent": 74 }
+    {
+      "label": "월",
+      "percent": 0
+    },
+    {
+      "label": "화",
+      "percent": 0
+    },
+    {
+      "label": "수",
+      "percent": 0
+    },
+    {
+      "label": "목",
+      "percent": 0
+    },
+    {
+      "label": "금",
+      "percent": 0
+    },
+    {
+      "label": "토",
+      "percent": 0
+    },
+    {
+      "label": "일",
+      "percent": 0
+    }
   ]
 }

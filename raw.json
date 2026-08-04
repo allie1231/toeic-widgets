@@ -1,0 +1,497 @@
+{
+  "schemaVersion": 2,
+  "source": "notion",
+  "generatedAt": "2026-08-04T15:16:20.352Z",
+  "sources": {
+    "goals": [
+      {
+        "id": "3b26bebf-c7f3-8174-a539-edc0b90ef4e3",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Target": 850,
+          "Current": 725,
+          "Deadline": "2026-10-31",
+          "Progress": 85,
+          "Goal": "850점"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8187-ac59-c512bbbb8455",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Target": 900,
+          "Current": 725,
+          "Deadline": "2026-11-15",
+          "Progress": 81,
+          "Goal": "900점"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81c3-a18d-ceb9e5b092e0",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Target": 800,
+          "Current": 725,
+          "Deadline": "2026-09-20",
+          "Progress": 91,
+          "Goal": "800점"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81f3-a846-ed914da010c7",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Target": 760,
+          "Current": 725,
+          "Deadline": "2026-08-31",
+          "Progress": 95,
+          "Goal": "760점"
+        }
+      }
+    ],
+    "coach": [
+      {
+        "id": "3b26bebf-c7f3-817a-8a1c-f9cac12618c7",
+        "createdTime": "2026-08-04T12:57:00.000Z",
+        "lastEditedTime": "2026-08-04T12:57:00.000Z",
+        "properties": {
+          "Date": "2026-08-04",
+          "Priority Skill": [
+            "3b26bebf-c7f3-814a-9b71-cd79ea5ae1d5"
+          ],
+          "Pace Delta": null,
+          "Updated At": "2026-08-04T12:57:00.000Z",
+          "Review Due": 1,
+          "Mission": "형용사 품사자리 오답을 복습하고 P5 20초 타임어택 10문제를 푼다.",
+          "Brief": "복습 대상 1문제 · 우선 Skill 형용사 · 예상 25분 · 페이스 기준선 수집 중",
+          "Estimated Minutes": 25,
+          "Snapshot": "2026-08-04 · Today's Coach"
+        }
+      }
+    ],
+    "skills": [
+      {
+        "id": "3b26bebf-c7f3-8104-96f4-ec2e35840fa4",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "지문에 직접 쓰이지 않은 결론을 근거로 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "추론"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8113-bd8b-fc590ae19476",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "화자의 표현 뒤에 숨은 의도를 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Listening",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "의도"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8115-b6ac-e2a964937a91",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "문장 간 논리와 지시어를 보고 들어갈 위치를 찾습니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "삽입"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8134-9b71-fb5500fd1563",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "보기 중 지문과 일치하지 않는 항목을 찾습니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "NOT"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-813f-be06-c39f6e870161",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "업무·계약·일정 등 빈출 명사를 학습합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Vocabulary",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "명사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8147-ad7e-fd496164b3ba",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "지문에 직접 제시된 정보를 정확히 찾습니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "세부사항"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-814a-9b71-cd79ea5ae1d5",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 1,
+          "Description": "명사를 수식하거나 보어가 되는 표현을 학습합니다.",
+          "Wrong Answers": [
+            "3b26bebf-c7f3-81b4-ba09-c6d581e5dcf5"
+          ],
+          "Recent Wrong": "2026-08-04",
+          "Mastery": 89,
+          "Category": "Vocabulary",
+          "Open Weight": 0.9,
+          "Priority": "Low",
+          "Skill": "형용사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-815e-8557-e89342258c16",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "to부정사의 명사·형용사·부사 역할을 구분합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "부정사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8162-8e6d-ea083ce8552d",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "능동·수동 구조와 목적어 유무를 구분합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "태"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8178-9de1-d4cdf34c53c0",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "선행사와 뒤 절의 불완전성을 기준으로 고릅니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "관계대명사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8182-8e42-cb615eaf3e43",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "같은 문법 형태가 나란히 연결되는 구조를 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "병치"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8182-ac7b-c77cc2d6c8ca",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "문장 구조를 결정하는 동사의 뜻과 결합을 학습합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Vocabulary",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "동사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-818b-9133-e28f732a4f57",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "대화의 장소를 드러내는 단서를 포착합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Listening",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "장소"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-8196-ab3b-e28c6c03d2b9",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "동명사의 명사 역할과 동사별 목적어 패턴을 익힙니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "동명사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-819b-8dc8-e76c649a6228",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "세 지문의 정보를 연결해 답을 찾습니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "삼중지문"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-819f-bd8c-c5d5cbdf2e21",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "시간·장소·관계별 전치사 결합을 학습합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Vocabulary",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "전치사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81a9-9ec9-c2463651637f",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "앞뒤 문장으로 단어·문장의 의미를 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "문맥"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81ab-b02a-c814d36486c7",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "질문과 보기의 바꿔 말한 표현을 연결합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Listening",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "패러프레이징"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81b8-95f8-da0c154bbd47",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "장소·시간·이유와 완전한 절의 연결을 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "관계부사"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81dc-ba86-e486be0e1ebb",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "글이나 메시지가 작성된 목적을 찾습니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Reading",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "목적"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81e2-880d-d300ae64f7a4",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "사실과 반대되는 조건·결과 표현을 구분합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "가정법"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81f0-8a7c-e7daf147f172",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "직업·관계·역할 단서를 듣고 화자를 판단합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Listening",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "화자"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81f6-9ed2-c2eff738d633",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "동작의 시간과 완료 여부를 구분합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Grammar",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "시제"
+        }
+      },
+      {
+        "id": "3b26bebf-c7f3-81fd-b384-e7d321df35d0",
+        "createdTime": "2026-08-04T12:34:00.000Z",
+        "lastEditedTime": "2026-08-04T12:34:00.000Z",
+        "properties": {
+          "Wrong Count": 0,
+          "Description": "동사·형용사·문장 전체를 수식하는 표현을 학습합니다.",
+          "Wrong Answers": [],
+          "Recent Wrong": null,
+          "Mastery": 100,
+          "Category": "Vocabulary",
+          "Open Weight": 0,
+          "Priority": "Low",
+          "Skill": "부사"
+        }
+      }
+    ],
+    "studyLog": [],
+    "wrongAnswers": [
+      {
+        "id": "3b26bebf-c7f3-81b4-ba09-c6d581e5dcf5",
+        "createdTime": "2026-08-04T11:13:00.000Z",
+        "lastEditedTime": "2026-08-04T11:13:00.000Z",
+        "properties": {
+          "최근복습일": "2026-08-04",
+          "Review Count": 1,
+          "파트": "P5",
+          "위젯노출": true,
+          "상태": "미해결",
+          "Active Weight": 0.9,
+          "출처": "예시 행 — 형식 참고용. 지워도 됩니다",
+          "오답원인": "시간부족",
+          "다음복습일": "2026-08-05",
+          "정답근거": "빈칸이 관사와 명사 사이라 형용사 자리 — 해석 없이 자리로 결정.",
+          "복습단계": 1,
+          "영역": "RC",
+          "Confidence": "Low",
+          "함정": "동사형 선택지가 문맥상 그럴듯해 보여 해석하다가 시간을 씀.",
+          "Mock Test": [],
+          "오답유형": "품사자리",
+          "Skill": [
+            "3b26bebf-c7f3-814a-9b71-cd79ea5ae1d5"
+          ],
+          "Difficulty": "Medium",
+          "문제": "[예시] ETS2-RC-P5-142"
+        }
+      }
+    ],
+    "mockTests": []
+  }
+}

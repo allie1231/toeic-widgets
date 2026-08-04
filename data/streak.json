@@ -1,7 +1,7 @@
 {
-  "icon": "🔥",
-  "days": 32,
+  "icon": "🌱",
+  "days": 0,
   "unitLabel": "days",
-  "bestLabel": "최고 기록 42일",
-  "ariaLabel": "현재 32일 연속 학습 중이며 최고 기록은 42일입니다."
+  "bestLabel": "첫 학습을 기록하면 스트릭이 시작됩니다.",
+  "ariaLabel": "연속 학습 기록이 아직 없습니다."
 }

@@ -1,7 +1,7 @@
 {
-  "score": 785,
-  "trendLabel": "+60 trend",
-  "summary": "최근 학습 추세 기준 · 예상 점수",
-  "history": [725, 738, 746, 759, 773, 785],
-  "chartSummary": "최근 기록부터 예상 점수까지 꾸준히 상승하는 추세입니다."
+  "score": 725,
+  "trendLabel": "No mock tests yet",
+  "summary": "Complete your first mock test to start a forecast.",
+  "history": [],
+  "chartSummary": "점수 추이를 표시하려면 모의고사 기록이 더 필요합니다."
 }

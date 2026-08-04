@@ -1,9 +1,29 @@
 {
   "currentLabel": "725 current",
   "goals": [
-    { "target": 760, "progress": 95, "percentLabel": "95%", "ariaLabel": "760점 목표 95%" },
-    { "target": 800, "progress": 74, "percentLabel": "74%", "ariaLabel": "800점 목표 74%" },
-    { "target": 850, "progress": 56, "percentLabel": "56%", "ariaLabel": "850점 목표 56%" },
-    { "target": 900, "progress": 0, "percentLabel": "0%", "ariaLabel": "900점 목표 0%" }
+    {
+      "target": 760,
+      "progress": 95,
+      "percentLabel": "95%",
+      "ariaLabel": "760점 목표 95%"
+    },
+    {
+      "target": 800,
+      "progress": 91,
+      "percentLabel": "91%",
+      "ariaLabel": "800점 목표 91%"
+    },
+    {
+      "target": 850,
+      "progress": 85,
+      "percentLabel": "85%",
+      "ariaLabel": "850점 목표 85%"
+    },
+    {
+      "target": 900,
+      "progress": 81,
+      "percentLabel": "81%",
+      "ariaLabel": "900점 목표 81%"
+    }
   ]
 }
