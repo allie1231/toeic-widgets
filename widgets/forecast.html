@@ -12,11 +12,11 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate data-source="../data/forecast.json" aria-labelledby="widget-title">
-    <div class="widget-content">
-      <header class="widget-header">
-        <h1 class="widget-title" id="widget-title">Score Forecast</h1>
-        <span class="pill" data-bind="trendLabel"></span>
+  <article class="card" data-card data-animate data-source="../data/forecast.json" aria-labelledby="widget-title">
+    <div class="card__content">
+      <header class="header">
+        <h1 class="header__title" id="widget-title">Score Forecast</h1>
+        <span class="chip" data-bind="trendLabel"></span>
       </header>
 
       <p class="metric-large" data-counter-bind="score"></p>
