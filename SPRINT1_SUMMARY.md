@@ -25,11 +25,11 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 
 ### Desktop dashboard — 1200 × 900 viewport
 
-![Sprint 1 desktop dashboard](docs/screenshots/sprint1-dashboard-desktop.png)
+![Sprint 1 desktop dashboard](docs/screenshots/sprint1-dashboard-desktop.jpg)
 
 ### Mobile dashboard — 390 × 844 viewport
 
-![Sprint 1 mobile dashboard](docs/screenshots/sprint1-dashboard-mobile.png)
+![Sprint 1 mobile dashboard](docs/screenshots/sprint1-dashboard-mobile.jpg)
 
 ## Final folder tree
 
@@ -60,8 +60,8 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 │   └── study.json
 ├── docs/
 │   └── screenshots/
-│       ├── sprint1-dashboard-desktop.png
-│       └── sprint1-dashboard-mobile.png
+│       ├── sprint1-dashboard-desktop.jpg
+│       └── sprint1-dashboard-mobile.jpg
 ├── scripts/
 │   ├── build-json.js
 │   ├── check-site.js
@@ -92,8 +92,8 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 
 - `REPORT.md`
 - `SPRINT1_SUMMARY.md`
-- `docs/screenshots/sprint1-dashboard-desktop.png`
-- `docs/screenshots/sprint1-dashboard-mobile.png`
+- `docs/screenshots/sprint1-dashboard-desktop.jpg`
+- `docs/screenshots/sprint1-dashboard-mobile.jpg`
 - `scripts/check-site.js`
 
 ### Moved from `public/` to the repository root
@@ -157,6 +157,7 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 | `312de75` | `feat: rebuild hero widget` |
 | `9e03bcb` | `feat: rebuild coach widget` |
 | `83169b8` | `feat: rebuild weak skills widget` |
+| `8b9c214` | `docs: add Sprint 1 summary` |
 
 ## Required URL verification
 
