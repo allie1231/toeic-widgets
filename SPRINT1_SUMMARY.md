@@ -23,6 +23,7 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 - Published the production build to GitHub Pages and repeated URL, asset, JSON, browser, and console validation against the deployed site.
 - Added `WIDGETS.md` with all embed URLs, preview images, recommended sizes, JSON sources, and reserved future API routes.
 - Added a shared SVG favicon and page descriptions, and replaced native iframe preloading with viewport-driven dashboard loading.
+- Updated all GitHub workflow actions to their current Node 24-compatible major versions.
 - Passed the required live Lighthouse thresholds for Index, Dashboard, and Hero.
 
 ## Screenshots
@@ -181,6 +182,8 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 | `cbfbae2` | `fix: correct screenshot file extensions` |
 | `02511c8` | `docs: add widget embed catalog` |
 | `07b580b` | `perf: optimize production release gates` |
+| `5a3f060` | `docs: finalize Sprint 1 production report` |
+| `6b1cd38` | `ci: update GitHub Actions runtimes` |
 
 ## Required URL verification
 
