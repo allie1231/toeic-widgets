@@ -12,16 +12,18 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">Accuracy</h1>
-      <span class="widget-meta">Last test</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/accuracy.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title">Accuracy</h1>
+        <span class="widget-meta" data-bind="periodLabel"></span>
+      </header>
 
-    <div class="accuracy-list">
-      <div class="accuracy-item"><span class="accuracy-item__part">P5</span><div class="progress" data-progress="92" aria-label="파트 5 정답률 92%"><div class="progress__fill"></div></div><strong class="accuracy-item__value"><span data-counter="92" data-counter-suffix="%">92%</span></strong></div>
-      <div class="accuracy-item"><span class="accuracy-item__part">P6</span><div class="progress" data-progress="84" aria-label="파트 6 정답률 84%"><div class="progress__fill"></div></div><strong class="accuracy-item__value"><span data-counter="84" data-counter-suffix="%">84%</span></strong></div>
-      <div class="accuracy-item"><span class="accuracy-item__part">P7</span><div class="progress" data-progress="73" aria-label="파트 7 정답률 73%"><div class="progress__fill"></div></div><strong class="accuracy-item__value"><span data-counter="73" data-counter-suffix="%">73%</span></strong></div>
+      <div class="accuracy-list">
+        <template data-repeat="parts">
+          <div class="accuracy-item"><span class="accuracy-item__part" data-bind="name"></span><div class="progress" data-progress-bind="accuracy" data-bind-aria-label="ariaLabel"><div class="progress__fill"></div></div><strong class="accuracy-item__value"><span data-counter-bind="accuracy" data-counter-suffix="%"></span></strong></div>
+        </template>
+      </div>
     </div>
   </article>
 </body>
