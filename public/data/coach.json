@@ -1,0 +1,12 @@
+{
+  "date": "2026-08-04",
+  "dateLabel": "2026.08.04",
+  "focusSkill": "형용사",
+  "durationLabel": "25 min",
+  "mission": "형용사 품사자리 오답을 복습하고 P5 20초 타임어택 10문제를 풉니다.",
+  "metrics": [
+    { "label": "Review", "value": "1문제" },
+    { "label": "Pace", "value": "수집 중" },
+    { "label": "Focus", "value": "P5" }
+  ]
+}
