@@ -1,0 +1,7 @@
+{
+  "name": "toeic-widgets",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "잇재 스튜디오 · TOEIC 노션 임베드 위젯 4종 (SCORE / QUEUE / PACE / TIMER)"
+}

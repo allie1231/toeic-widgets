@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIMER</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<link rel="stylesheet" href="./style.css">
+<style>
+  .head { display: flex; justify-content: space-between; align-items: baseline; }
+  .time { font-size: 44px; font-weight: 700; text-align: center; letter-spacing: -0.02em; margin: 14px 0 6px; color: var(--ink-strong); }
+  .active { font-size: 10px; text-align: center; text-transform: uppercase; letter-spacing: 0.14em; color: var(--ink-mute); font-weight: 600; margin-bottom: 10px; }
+  .presets { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-bottom: 8px; }
+  .presets button { border: 1px solid var(--line); background: transparent; color: var(--ink); font-family: inherit; font-size: 11px; padding: 8px 6px; border-radius: 6px; cursor: pointer; font-weight: 500; }
+  .presets button:hover { border-color: var(--ink-mute); }
+  .presets button.on { background: var(--ink); color: white; border-color: var(--ink); }
+  .controls { display: flex; gap: 6px; }
+  .controls button { flex: 1; border: none; background: var(--ink); color: white; font-family: inherit; font-size: 12px; padding: 9px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+  .controls button.sec { background: var(--line); color: var(--ink); }
+  .done { color: #A8B788 !important; }
+</style>
+</head>
+<body>
+<div class="head">
+  <div class="label">TOEIC · TIMER</div>
+</div>
+
+<div class="time num" id="display">00:00</div>
+<div class="active" id="active">준비</div>
+
+<div class="presets">
+  <button data-sec="600">P5 · 10분</button>
+  <button data-sec="1920">P6+P7 · 32분</button>
+  <button data-sec="4500">RC · 75분</button>
+  <button data-sec="900">딕테이션 · 15분</button>
+</div>
+
+<div class="controls">
+  <button id="startBtn">시작</button>
+  <button id="resetBtn" class="sec">리셋</button>
+</div>
+
+<script>
+let total = 0, remaining = 0, running = false, tick = null, activeLabel = '';
+
+const displayEl = document.getElementById('display');
+const activeEl = document.getElementById('active');
+const startBtn = document.getElementById('startBtn');
+
+function fmt(s) {
+  const m = Math.floor(s / 60), sec = s % 60;
+  return `${String(m).padStart(2, '0')}:${String(sec).padStart(2, '0')}`;
+}
+
+function render() {
+  displayEl.textContent = fmt(Math.max(0, remaining));
+  if (remaining <= 0 && total > 0) {
+    displayEl.classList.add('done');
+    activeEl.textContent = activeLabel + ' 완료';
+  } else {
+    displayEl.classList.remove('done');
+    activeEl.textContent = activeLabel || '준비';
+  }
+}
+
+function pick(sec, label) {
+  document.querySelectorAll('.presets button').forEach(b => b.classList.remove('on'));
+  event.target.classList.add('on');
+  total = sec;
+  remaining = sec;
+  activeLabel = label;
+  running = false;
+  clearInterval(tick);
+  startBtn.textContent = '시작';
+  render();
+}
+
+document.querySelectorAll('.presets button').forEach(b => {
+  b.addEventListener('click', (e) => {
+    pick(parseInt(b.dataset.sec, 10), b.textContent);
+  });
+});
+
+startBtn.addEventListener('click', () => {
+  if (total === 0) return;
+  if (running) {
+    running = false;
+    clearInterval(tick);
+    startBtn.textContent = '이어서';
+    return;
+  }
+  running = true;
+  startBtn.textContent = '멈춤';
+  tick = setInterval(() => {
+    remaining--;
+    render();
+    if (remaining <= 0) {
+      running = false;
+      clearInterval(tick);
+      startBtn.textContent = '시작';
+      // 완료 알림 소리 (짧게)
+      try {
+        const ctx = new (window.AudioContext || window.webkitAudioContext)();
+        const o = ctx.createOscillator();
+        const g = ctx.createGain();
+        o.connect(g); g.connect(ctx.destination);
+        o.frequency.value = 660;
+        g.gain.value = 0.05;
+        o.start();
+        setTimeout(() => { o.stop(); ctx.close(); }, 220);
+      } catch (e) {}
+    }
+  }, 1000);
+});
+
+document.getElementById('resetBtn').addEventListener('click', () => {
+  running = false;
+  clearInterval(tick);
+  remaining = total;
+  startBtn.textContent = '시작';
+  render();
+});
+
+render();
+</script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>TOEIC Widgets · 잇재</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable.min.css">
+<style>
+  body { font-family: 'Pretendard Variable', Pretendard, system-ui, sans-serif; color: #4A6478; background: #FAFBFC; padding: 40px 20px; }
+  h1 { font-size: 18px; font-weight: 700; margin-bottom: 6px; letter-spacing: -0.01em; }
+  p { font-size: 13px; color: #7B98AE; margin-bottom: 24px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; max-width: 900px; }
+  .card { background: white; border: 1px solid #E4EBF1; border-radius: 10px; overflow: hidden; }
+  .card iframe { display: block; width: 100%; border: 0; }
+  .card h2 { font-size: 10px; letter-spacing: 0.14em; text-transform: uppercase; color: #B8C5D0; padding: 10px 14px 0; font-weight: 600; }
+  .url { font-size: 10px; color: #B8C5D0; padding: 4px 14px 10px; word-break: break-all; font-family: ui-monospace, monospace; }
+</style>
+</head>
+<body>
+<h1>TOEIC Widgets</h1>
+<p>노션 페이지에 <code>/embed</code> 명령으로 아래 URL을 넣어 쓰세요.</p>
+
+<div class="grid">
+  <div class="card">
+    <h2>SCORE</h2>
+    <div class="url" id="u1">/score.html</div>
+    <iframe src="./score.html" height="200"></iframe>
+  </div>
+  <div class="card">
+    <h2>QUEUE</h2>
+    <div class="url" id="u2">/queue.html</div>
+    <iframe src="./queue.html" height="200"></iframe>
+  </div>
+  <div class="card">
+    <h2>PACE</h2>
+    <div class="url" id="u3">/pace.html</div>
+    <iframe src="./pace.html" height="220"></iframe>
+  </div>
+  <div class="card">
+    <h2>TIMER</h2>
+    <div class="url" id="u4">/timer.html</div>
+    <iframe src="./timer.html" height="260"></iframe>
+  </div>
+</div>
+
+<script>
+const base = location.origin;
+['u1','u2','u3','u4'].forEach((id, i) => {
+  const paths = ['/score.html','/queue.html','/pace.html','/timer.html'];
+  document.getElementById(id).textContent = base + paths[i];
+});
+</script>
+</body>
+</html>
