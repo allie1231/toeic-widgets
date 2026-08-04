@@ -26,7 +26,7 @@ jobs:
           node-version: "20"
 
       - name: Validate widget data
-        run: npm run data:check
+        run: npm run site:check
 
   build:
     needs: validate
@@ -35,13 +35,19 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Prepare static artifact
+        run: |
+          mkdir -p .site
+          cp index.html dashboard.html .site/
+          cp -R assets widgets data .site/
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: public
+          path: .site
 
   deploy:
     needs: build

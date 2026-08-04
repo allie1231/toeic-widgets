@@ -4,7 +4,7 @@ import { fetchNotionSnapshot, getNotionConfig, validateNotionConfig } from "./fe
 
 export async function updateDashboard({
   environment = process.env,
-  outputDirectory = "public/data",
+  outputDirectory = "data",
   fetchSnapshot = fetchNotionSnapshot,
   writeData = writeWidgetData,
 } = {}) {

@@ -21,7 +21,7 @@ TOEIC 학습 현황을 보여 주는 프레임워크 없는 정적 위젯 시스
 
 ## 데이터
 
-모든 학습 값은 `public/data/`의 JSON에서 읽습니다. 위젯 HTML에는 점수, 날짜, 학습량, 상태와 차트 값이 들어 있지 않습니다. 공용 `DataSource` 컴포넌트가 JSON을 불러와 텍스트, 카운터, 진행률, 반복 목록, 막대 차트, 선 차트와 히트맵에 바인딩합니다.
+모든 학습 값은 `data/`의 JSON에서 읽습니다. 위젯 HTML에는 점수, 날짜, 학습량, 상태와 차트 값이 들어 있지 않습니다. 공용 `DataSource` 컴포넌트가 JSON을 불러와 텍스트, 카운터, 진행률, 반복 목록, 막대 차트, 선 차트와 히트맵에 바인딩합니다.
 
 | 데이터 파일 | 사용 위젯 | 주요 필드 |
 |---|---|---|
@@ -49,21 +49,20 @@ JSON 요청은 캐시를 사용하지 않으므로 이후 Notion 자동 생성�
 │   ├── fetch-notion.js
 │   ├── build-json.js
 │   └── update-dashboard.js
-└── public/
-    ├── assets/
-    │   ├── css/
-    │   │   ├── theme.css
-    │   │   ├── layout.css
-    │   │   └── components.css
-    │   └── js/
-    │       ├── common.js
-    │       └── animation.js
-    ├── widgets/
-    │   └── *.html
-    ├── data/
-    │   └── *.json
-    ├── dashboard.html
-    └── index.html
+├── assets/
+│   ├── css/
+│   │   ├── theme.css
+│   │   ├── layout.css
+│   │   └── components.css
+│   └── js/
+│       ├── common.js
+│       └── animation.js
+├── widgets/
+│   └── *.html
+├── data/
+│   └── *.json
+├── dashboard.html
+└── index.html
 ```
 
 ## 공용 컴포넌트
@@ -104,8 +103,9 @@ Phase 3에서는 Notion 연동 경계만 준비되어 있습니다. 현재 코�
 사용 가능한 명령:
 
 ```bash
-npm run data:check   # 현재 public/data JSON 검증
-npm run data:build   # .cache/notion-snapshot.json을 public/data로 빌드
+npm run site:check   # 페이지 링크, 공용 자산, 인라인 코드, JSON을 한 번에 검증
+npm run data:check   # 현재 data/ JSON 검증
+npm run data:build   # .cache/notion-snapshot.json을 data/로 빌드
 npm run data:update  # 전체 자동화 실행; 현재는 기본적으로 안전하게 건너뜀
 ```
 
@@ -114,14 +114,14 @@ npm run data:update  # 전체 자동화 실행; 현재는 기본적으로 안전
 ## 로컬 실행
 
 ```bash
-npx serve public
+npx serve .
 ```
 
 브라우저에서 `http://localhost:3000/dashboard.html`을 엽니다.
 
 ## 배포
 
-`main` 브랜치에 푸시하면 GitHub Actions가 먼저 10개 JSON 계약을 검증한 뒤 `public/`을 GitHub Pages로 배포합니다. 데이터 자동화가 활성화된 뒤에는 변경된 JSON을 bot commit으로 `main`에 반영하며, 해당 커밋이 기존 배포 workflow를 실행합니다.
+`main` 브랜치에 푸시하면 GitHub Actions가 먼저 페이지와 10개 JSON 계약을 검증한 뒤 루트의 정적 사이트 파일을 GitHub Pages로 배포합니다. 데이터 자동화가 활성화된 뒤에는 변경된 JSON을 bot commit으로 `main`에 반영하며, 해당 커밋이 기존 배포 workflow를 실행합니다.
 
 ## 라이선스
 

@@ -61,7 +61,7 @@ export function buildWidgetData(snapshot) {
   return structuredClone(snapshot.widgets);
 }
 
-export async function readWidgetData(directory = "public/data") {
+export async function readWidgetData(directory = "data") {
   const widgetData = {};
 
   for (const [name, schema] of Object.entries(WIDGET_SCHEMAS)) {
@@ -72,7 +72,7 @@ export async function readWidgetData(directory = "public/data") {
   return widgetData;
 }
 
-export async function writeWidgetData(widgetData, directory = "public/data") {
+export async function writeWidgetData(widgetData, directory = "data") {
   const errors = validateWidgetCollection(widgetData);
   if (errors.length) throw new Error(errors.join("\n"));
 
@@ -94,7 +94,7 @@ export async function writeWidgetData(widgetData, directory = "public/data") {
 }
 
 function parseArguments(argumentsList) {
-  const options = { check: false, input: "", output: "public/data" };
+  const options = { check: false, input: "", output: "data" };
 
   for (let index = 0; index < argumentsList.length; index += 1) {
     const argument = argumentsList[index];
