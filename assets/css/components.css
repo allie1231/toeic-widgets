@@ -336,6 +336,11 @@
   transform: translateY(-2px);
 }
 
+.bar-chart__bar.is-empty {
+  background: var(--color-track);
+  opacity: 1;
+}
+
 .bar-chart__labels {
   display: flex;
   justify-content: space-between;
@@ -345,8 +350,20 @@
 }
 
 .forecast-chart {
+  position: relative;
   height: 94px;
   margin-top: var(--space-5);
+}
+
+.forecast-chart.is-empty::before {
+  position: absolute;
+  inset: 50% 0 auto;
+  border-top: 2px dashed var(--color-border);
+  content: "";
+}
+
+.forecast-chart.is-empty svg {
+  opacity: 0;
 }
 
 .forecast-chart svg {

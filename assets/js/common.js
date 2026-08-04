@@ -112,7 +112,8 @@
   function mountBars(root = document) {
     selectWithin(root, "[data-bar-height]").forEach((bar) => {
       const height = Math.max(0, Math.min(100, Number(bar.dataset.barHeight || 0)));
-      global.requestAnimationFrame(() => { bar.style.height = `${height}%`; });
+      bar.classList.toggle("is-empty", height === 0);
+      global.requestAnimationFrame(() => { bar.style.height = height === 0 ? "4px" : `${height}%`; });
     });
   }
 
