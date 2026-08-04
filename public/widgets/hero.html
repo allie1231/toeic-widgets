@@ -12,26 +12,28 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">TOEIC 900 Project</h1>
-      <span class="pill">RC Focus</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/hero.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title" data-bind="title"></h1>
+        <span class="pill" data-bind="focus"></span>
+      </header>
 
-    <div class="score-lockup" aria-label="현재 점수 725점, 목표 점수 900점">
-      <strong class="metric-large" data-counter="725">725</strong>
-      <span class="score-lockup__arrow" aria-hidden="true">→</span>
-      <span class="score-lockup__target">900</span>
+      <div class="score-lockup" data-bind-aria-label="scoreAriaLabel">
+        <strong class="metric-large" data-counter-bind="current"></strong>
+        <span class="score-lockup__arrow" aria-hidden="true">→</span>
+        <span class="score-lockup__target" data-bind="target"></span>
+      </div>
+
+      <div class="progress progress--large hero-progress" data-progress-bind="progress" data-bind-aria-label="progressAriaLabel">
+        <div class="progress__fill"></div>
+      </div>
+
+      <footer class="widget-row hero-footer">
+        <strong><span data-counter-bind="progress" data-counter-decimals="1" data-counter-suffix="%"></span></strong>
+        <p class="widget-meta" data-bind="remaining" data-bind-suffix=" points left"></p>
+      </footer>
     </div>
-
-    <div class="progress progress--large hero-progress" data-progress="80.6" aria-label="목표 점수 진행률">
-      <div class="progress__fill"></div>
-    </div>
-
-    <footer class="widget-row hero-footer">
-      <strong><span data-counter="80.6" data-counter-decimals="1" data-counter-suffix="%">80.6%</span></strong>
-      <p class="widget-meta">175 points left</p>
-    </footer>
   </article>
 </body>
 </html>
