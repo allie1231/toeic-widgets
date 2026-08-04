@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <title>학습 시간</title>
+  <link rel="stylesheet" href="../assets/css/theme.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <script src="../assets/js/animation.js" defer></script>
+  <script src="../assets/js/common.js" defer></script>
+</head>
+<body class="widget-page">
+  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
+    <header class="widget-header">
+      <h1 class="widget-title" id="widget-title">Study Time</h1>
+      <span class="widget-meta">This week</span>
+    </header>
+
+    <p class="metric-large" aria-label="2시간 14분"><span data-counter="2">2</span>h <span data-counter="14">14</span>m</p>
+    <p class="supporting-text">오늘 · 목표 3시간의 74%</p>
+
+    <div class="bar-chart" aria-hidden="true">
+      <span class="bar-chart__bar" data-bar-height="24"></span>
+      <span class="bar-chart__bar" data-bar-height="52"></span>
+      <span class="bar-chart__bar" data-bar-height="38"></span>
+      <span class="bar-chart__bar" data-bar-height="72"></span>
+      <span class="bar-chart__bar" data-bar-height="64"></span>
+      <span class="bar-chart__bar" data-bar-height="90"></span>
+      <span class="bar-chart__bar" data-bar-height="74"></span>
+    </div>
+    <div class="bar-chart__labels" aria-hidden="true"><span>월</span><span>화</span><span>수</span><span>목</span><span>금</span><span>토</span><span>일</span></div>
+    <p class="sr-only">이번 주 일별 학습량은 월 24%, 화 52%, 수 38%, 목 72%, 금 64%, 토 90%, 일 74%입니다.</p>
+  </article>
+</body>
+</html>
