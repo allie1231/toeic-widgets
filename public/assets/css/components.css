@@ -26,6 +26,25 @@
   outline-offset: 3px;
 }
 
+.widget-card[aria-busy="true"] .widget-content {
+  opacity: 0.45;
+}
+
+.widget-content {
+  transition: opacity var(--transition-fast);
+}
+
+.widget-error {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid color-mix(in srgb, var(--color-danger) 24%, transparent);
+  border-radius: var(--radius-md);
+  background: color-mix(in srgb, var(--color-danger) 8%, transparent);
+  color: var(--color-danger);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
 .widget-header,
 .widget-row,
 .metric-row {
