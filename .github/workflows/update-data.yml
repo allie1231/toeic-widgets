@@ -1,26 +1,30 @@
-name: update dashboard data
+name: sync Notion data
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "17 0 * * *"
 
 permissions:
   contents: write
 
 concurrency:
-  group: widget-data-update
+  group: notion-widget-data
   cancel-in-progress: false
 
 jobs:
-  update:
-    if: ${{ vars.NOTION_AUTOMATION_ENABLED == 'true' }}
+  sync:
     runs-on: ubuntu-latest
     timeout-minutes: 10
     env:
-      NOTION_AUTOMATION_ENABLED: "true"
       NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
-      NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+      NOTION_GOALS_DATA_SOURCE_ID: ${{ vars.NOTION_GOALS_DATA_SOURCE_ID }}
+      NOTION_COACH_DATA_SOURCE_ID: ${{ vars.NOTION_COACH_DATA_SOURCE_ID }}
+      NOTION_SKILLS_DATA_SOURCE_ID: ${{ vars.NOTION_SKILLS_DATA_SOURCE_ID }}
+      NOTION_STUDY_LOG_DATA_SOURCE_ID: ${{ vars.NOTION_STUDY_LOG_DATA_SOURCE_ID }}
+      NOTION_WRONG_ANSWERS_DATA_SOURCE_ID: ${{ vars.NOTION_WRONG_ANSWERS_DATA_SOURCE_ID }}
+      NOTION_MOCK_TESTS_DATA_SOURCE_ID: ${{ vars.NOTION_MOCK_TESTS_DATA_SOURCE_ID }}
+      WIDGET_TIME_ZONE: Asia/Seoul
     steps:
       - uses: actions/checkout@v7
         with:
@@ -28,18 +32,21 @@ jobs:
 
       - uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "24"
 
-      - name: Update widget JSON
+      - name: Test data pipeline
+        run: npm test
+
+      - name: Fetch Notion and build widget JSON
         run: npm run data:update
 
-      - name: Validate generated data
-        run: npm run data:check
+      - name: Validate generated site
+        run: npm run site:check
 
-      - name: Detect data changes
+      - name: Detect generated changes
         id: data_changes
         run: |
-          if git diff --quiet -- data; then
+          if git diff --quiet -- raw.json data; then
             echo "changed=false" >> "$GITHUB_OUTPUT"
           else
             echo "changed=true" >> "$GITHUB_OUTPUT"
@@ -50,6 +57,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data
-          git commit -m "chore: refresh widget data"
+          git add raw.json data
+          git commit -m "chore: sync live Notion data"
           git push
