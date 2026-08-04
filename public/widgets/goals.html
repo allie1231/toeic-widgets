@@ -12,17 +12,18 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">Goal Progress</h1>
-      <span class="widget-meta">725 current</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/goals.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title">Goal Progress</h1>
+        <span class="widget-meta" data-bind="currentLabel"></span>
+      </header>
 
-    <div class="goal-list">
-      <div class="goal-item"><span class="goal-item__score">760</span><div class="progress" data-progress="95" aria-label="760점 목표 95%"><div class="progress__fill"></div></div><span class="goal-item__percent">95%</span></div>
-      <div class="goal-item"><span class="goal-item__score">800</span><div class="progress" data-progress="74" aria-label="800점 목표 74%"><div class="progress__fill"></div></div><span class="goal-item__percent">74%</span></div>
-      <div class="goal-item"><span class="goal-item__score">850</span><div class="progress" data-progress="56" aria-label="850점 목표 56%"><div class="progress__fill"></div></div><span class="goal-item__percent">56%</span></div>
-      <div class="goal-item"><span class="goal-item__score">900</span><div class="progress" data-progress="0" aria-label="900점 목표 0%"><div class="progress__fill"></div></div><span class="goal-item__percent">0%</span></div>
+      <div class="goal-list">
+        <template data-repeat="goals">
+          <div class="goal-item"><span class="goal-item__score" data-bind="target"></span><div class="progress" data-progress-bind="progress" data-bind-aria-label="ariaLabel"><div class="progress__fill"></div></div><span class="goal-item__percent" data-bind="percentLabel"></span></div>
+        </template>
+      </div>
     </div>
   </article>
 </body>
