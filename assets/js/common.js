@@ -148,6 +148,31 @@
     mountBars(root);
   }
 
+  function mountLazyFrames(root = document) {
+    const frames = selectWithin(root, "iframe[data-lazy-frame][data-src]");
+    if (!frames.length) return;
+
+    const load = (frame) => {
+      frame.src = frame.dataset.src;
+      frame.removeAttribute("data-src");
+    };
+
+    if (!("IntersectionObserver" in global)) {
+      frames.forEach(load);
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        load(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, { rootMargin: "64px 0px" });
+
+    frames.forEach((frame) => observer.observe(frame));
+  }
+
   class DataSource {
     constructor(root) {
       this.root = root;
@@ -241,6 +266,7 @@
 
   function mount() {
     Theme.init();
+    mountLazyFrames();
     document.querySelectorAll("[data-card]").forEach((element) => new Card(element).mount());
     document.querySelectorAll("[data-source]").forEach((element) => new DataSource(element).mount());
     mountComponents(document);

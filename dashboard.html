@@ -6,6 +6,7 @@
   <meta name="color-scheme" content="light dark">
   <meta name="description" content="TOEIC 900 학습 현황을 한눈에 보는 생산성 대시보드">
   <title>TOEIC 900 Dashboard</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/css/theme.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
@@ -26,15 +27,15 @@
 
     <main class="dashboard-grid" id="widgets" aria-label="TOEIC 학습 위젯">
       <section class="dashboard-panel" data-animate><h2 class="sr-only">목표 점수 진행률</h2><iframe class="dashboard-frame" src="widgets/hero.html" title="목표 점수 진행률" loading="eager"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">AI 코치</h2><iframe class="dashboard-frame dashboard-frame--tall" src="widgets/coach.html" title="AI 코치" loading="eager"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">취약 영역</h2><iframe class="dashboard-frame" src="widgets/weak-skills.html" title="취약 영역" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">점수 목표</h2><iframe class="dashboard-frame" src="widgets/goals.html" title="점수 목표" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">학습 시간</h2><iframe class="dashboard-frame" src="widgets/study-time.html" title="학습 시간" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">점수 예측</h2><iframe class="dashboard-frame" src="widgets/forecast.html" title="점수 예측" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">학습 히트맵</h2><iframe class="dashboard-frame dashboard-frame--compact" src="widgets/heatmap.html" title="학습 히트맵" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">RC 풀이 속도</h2><iframe class="dashboard-frame dashboard-frame--tall" src="widgets/rc-speed.html" title="RC 풀이 속도" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">파트별 정답률</h2><iframe class="dashboard-frame dashboard-frame--compact" src="widgets/accuracy.html" title="파트별 정답률" loading="lazy"></iframe></section>
-      <section class="dashboard-panel" data-animate><h2 class="sr-only">연속 학습</h2><iframe class="dashboard-frame" src="widgets/streak.html" title="연속 학습" loading="lazy"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">AI 코치</h2><iframe class="dashboard-frame dashboard-frame--tall" data-lazy-frame data-src="widgets/coach.html" title="AI 코치"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">취약 영역</h2><iframe class="dashboard-frame" data-lazy-frame data-src="widgets/weak-skills.html" title="취약 영역"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">점수 목표</h2><iframe class="dashboard-frame" data-lazy-frame data-src="widgets/goals.html" title="점수 목표"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">학습 시간</h2><iframe class="dashboard-frame" data-lazy-frame data-src="widgets/study-time.html" title="학습 시간"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">점수 예측</h2><iframe class="dashboard-frame" data-lazy-frame data-src="widgets/forecast.html" title="점수 예측"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">학습 히트맵</h2><iframe class="dashboard-frame dashboard-frame--compact" data-lazy-frame data-src="widgets/heatmap.html" title="학습 히트맵"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">RC 풀이 속도</h2><iframe class="dashboard-frame dashboard-frame--tall" data-lazy-frame data-src="widgets/rc-speed.html" title="RC 풀이 속도"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">파트별 정답률</h2><iframe class="dashboard-frame dashboard-frame--compact" data-lazy-frame data-src="widgets/accuracy.html" title="파트별 정답률"></iframe></section>
+      <section class="dashboard-panel" data-animate><h2 class="sr-only">연속 학습</h2><iframe class="dashboard-frame" data-lazy-frame data-src="widgets/streak.html" title="연속 학습"></iframe></section>
     </main>
   </div>
 </body>
