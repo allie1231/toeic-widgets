@@ -155,7 +155,7 @@ For local execution, export the variables in the current shell or place them in 
 - full site validation after generation;
 - a bot commit only when `raw.json` or `data/` changed.
 
-A generated commit on `main` triggers the separate Pages deployment workflow. Deployment never receives `NOTION_TOKEN`; only the sync job can access it.
+Successful completion triggers the separate Pages deployment workflow through `workflow_run`. This is required because commits created with GitHub's workflow token do not emit another push workflow. Deployment checks out the newly updated `main` branch and never receives `NOTION_TOKEN`; only the sync job can access it.
 
 ## Operational failure behavior
 

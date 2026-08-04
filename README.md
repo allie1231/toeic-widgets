@@ -122,7 +122,7 @@ npx serve .
 
 ## 배포
 
-`main` 브랜치에 푸시하면 GitHub Actions가 먼저 페이지와 10개 JSON 계약을 검증한 뒤 루트의 정적 사이트 파일을 GitHub Pages로 배포합니다. 데이터 자동화가 활성화된 뒤에는 변경된 JSON을 bot commit으로 `main`에 반영하며, 해당 커밋이 기존 배포 workflow를 실행합니다.
+`main` 브랜치에 푸시하면 GitHub Actions가 먼저 페이지와 10개 JSON 계약을 검증한 뒤 루트의 정적 사이트 파일을 GitHub Pages로 배포합니다. Notion sync가 완료되면 별도의 `workflow_run` 이벤트가 같은 배포 workflow를 실행하므로, GitHub Actions bot이 만든 데이터 커밋도 자동으로 배포됩니다.
 
 ## 라이선스
 
