@@ -12,27 +12,29 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">Score Forecast</h1>
-      <span class="pill">+60 trend</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/forecast.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title">Score Forecast</h1>
+        <span class="pill" data-bind="trendLabel"></span>
+      </header>
 
-    <p class="metric-large" data-counter="785">785</p>
-    <p class="supporting-text">최근 학습 추세 기준 · 예상 점수</p>
+      <p class="metric-large" data-counter-bind="score"></p>
+      <p class="supporting-text" data-bind="summary"></p>
 
-    <div class="forecast-chart" aria-hidden="true">
-      <svg viewBox="0 0 360 90" preserveAspectRatio="none">
-        <defs>
-          <linearGradient id="forecast-line" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
-          <linearGradient id="forecast-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></linearGradient>
-        </defs>
-        <path class="forecast-chart__area" d="M0 76 L72 66 L144 58 L216 42 L288 28 L360 14 L360 90 L0 90Z"/>
-        <path class="forecast-chart__line" d="M0 76 L72 66 L144 58 L216 42 L288 28 L360 14"/>
-        <circle class="forecast-chart__dot" cx="360" cy="14" r="5"/>
-      </svg>
+      <div class="forecast-chart" data-line-chart-bind="history" aria-hidden="true">
+        <svg viewBox="0 0 360 90" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="forecast-line" x1="0" x2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb"/></linearGradient>
+            <linearGradient id="forecast-area" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#2563eb" stop-opacity="0"/></linearGradient>
+          </defs>
+          <path class="forecast-chart__area" data-chart-area/>
+          <path class="forecast-chart__line" data-chart-line/>
+          <circle class="forecast-chart__dot" data-chart-dot r="5"/>
+        </svg>
+      </div>
+      <p class="sr-only" data-bind="chartSummary"></p>
     </div>
-    <p class="sr-only">최근 기록부터 예상 점수까지 꾸준히 상승하는 추세입니다.</p>
   </article>
 </body>
 </html>
