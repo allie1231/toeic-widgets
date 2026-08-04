@@ -12,12 +12,14 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card streak-card" data-card data-animate aria-labelledby="widget-title">
-    <header><h1 class="widget-title" id="widget-title">Study Streak</h1></header>
-    <div class="streak-icon" aria-hidden="true">🔥</div>
-    <p class="metric-large streak-days"><span data-counter="32">32</span></p>
-    <p class="supporting-text">days · 최고 기록 42일</p>
-    <p class="sr-only">현재 32일 연속 학습 중이며 최고 기록은 42일입니다.</p>
+  <article class="widget-card streak-card" data-card data-animate data-source="../data/streak.json" data-bind-aria-label="ariaLabel" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header><h1 class="widget-title" id="widget-title">Study Streak</h1></header>
+      <div class="streak-icon" data-bind="icon" aria-hidden="true"></div>
+      <p class="metric-large streak-days"><span data-counter-bind="days"></span></p>
+      <p class="supporting-text"><span data-bind="unitLabel"></span> · <span data-bind="bestLabel"></span></p>
+      <p class="sr-only" data-bind="ariaLabel"></p>
+    </div>
   </article>
 </body>
 </html>
