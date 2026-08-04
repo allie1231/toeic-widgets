@@ -35,7 +35,10 @@
   class Counter {
     constructor(element) {
       this.element = element;
-      this.value = Number(element.dataset.counter || 0);
+      this.rawValue = element.dataset.counter;
+      this.value = Number(this.rawValue);
+      this.hasValue = this.rawValue !== undefined && this.rawValue !== "" && Number.isFinite(this.value);
+      this.placeholder = element.dataset.counterPlaceholder || "—";
       this.decimals = Number(element.dataset.counterDecimals || 0);
       this.prefix = element.dataset.counterPrefix || "";
       this.suffix = element.dataset.counterSuffix || "";
@@ -51,6 +54,11 @@
     }
 
     mount() {
+      if (!this.hasValue) {
+        this.element.textContent = this.placeholder;
+        return this;
+      }
+
       const animation = namespace.Animation;
       if (!animation) {
         this.render(this.value);
@@ -91,7 +99,8 @@
   const formatValue = (element, value) => {
     const prefix = element.dataset.bindPrefix || "";
     const suffix = element.dataset.bindSuffix || "";
-    return `${prefix}${value ?? ""}${suffix}`;
+    const displayValue = value ?? element.dataset.bindPlaceholder ?? "";
+    return `${prefix}${displayValue}${suffix}`;
   };
 
   const selectWithin = (root, selector) => {
@@ -121,7 +130,17 @@
   }
 
   function renderLineChart(chart, points) {
-    if (!Array.isArray(points) || points.length < 2) return;
+    const lineElement = chart.querySelector("[data-chart-line]");
+    const areaElement = chart.querySelector("[data-chart-area]");
+    const dotElement = chart.querySelector("[data-chart-dot]");
+
+    if (!Array.isArray(points) || points.length < 2) {
+      lineElement?.removeAttribute("d");
+      areaElement?.removeAttribute("d");
+      dotElement?.setAttribute("hidden", "");
+      chart.classList.add("is-empty");
+      return;
+    }
 
     const width = 360;
     const top = 14;
@@ -136,10 +155,12 @@
     const line = coordinates.map(({ x, y }, index) => `${index ? "L" : "M"}${x} ${y}`).join(" ");
     const last = coordinates[coordinates.length - 1];
 
-    chart.querySelector("[data-chart-line]")?.setAttribute("d", line);
-    chart.querySelector("[data-chart-area]")?.setAttribute("d", `${line} L${width} 90 L0 90Z`);
-    chart.querySelector("[data-chart-dot]")?.setAttribute("cx", String(last.x));
-    chart.querySelector("[data-chart-dot]")?.setAttribute("cy", String(last.y));
+    chart.classList.remove("is-empty");
+    lineElement?.setAttribute("d", line);
+    areaElement?.setAttribute("d", `${line} L${width} 90 L0 90Z`);
+    dotElement?.removeAttribute("hidden");
+    dotElement?.setAttribute("cx", String(last.x));
+    dotElement?.setAttribute("cy", String(last.y));
   }
 
   function mountComponents(root = document) {
@@ -187,7 +208,7 @@
       });
 
       selectWithin(root, "[data-counter-bind]").forEach((element) => {
-        element.dataset.counter = String(getValue(data, element.dataset.counterBind) ?? 0);
+        element.dataset.counter = String(getValue(data, element.dataset.counterBind) ?? "");
       });
 
       selectWithin(root, "[data-progress-bind]").forEach((element) => {

@@ -21,6 +21,7 @@ test("empty Notion sources produce complete, truthful onboarding payloads", () =
 
   assert.equal(widgets.hero.current, null);
   assert.equal(widgets.hero.target, null);
+  assert.equal(widgets.hero.dashboardSubtitle, "Add your current score in Goals to begin.");
   assert.equal(widgets.coach.mission, "No study data yet. Complete your first mock test.");
   assert.equal(widgets.skills.skills.length, 3);
   assert.equal(widgets.study.hours, 0);
@@ -53,6 +54,7 @@ test("builder derives every widget from normalized Notion records", () => {
   assert.equal(widgets.hero.current, 725);
   assert.equal(widgets.hero.target, 900);
   assert.equal(widgets.hero.progress, 80.6);
+  assert.equal(widgets.hero.dashboardSubtitle, "725 → 900 · Live progress from Notion");
   assert.equal(widgets.skills.skills[0].name, "형용사");
   assert.equal(widgets.study.hours, 1);
   assert.equal(widgets.study.minutes, 15);

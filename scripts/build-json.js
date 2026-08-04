@@ -13,7 +13,7 @@ export const SOURCE_KEYS = Object.freeze([
 ]);
 
 export const WIDGET_SCHEMAS = Object.freeze({
-  hero: { file: "hero.json", fields: { title: "string", current: ["number", "null"], target: ["number", "null"], progress: "number", remainingLabel: "string", focus: "string", scoreAriaLabel: "string", progressAriaLabel: "string" } },
+  hero: { file: "hero.json", fields: { title: "string", dashboardSubtitle: "string", current: ["number", "null"], target: ["number", "null"], progress: "number", remainingLabel: "string", focus: "string", scoreAriaLabel: "string", progressAriaLabel: "string" } },
   coach: { file: "coach.json", fields: { date: "string", dateLabel: "string", focusSkill: "string", durationLabel: "string", mission: "string", metrics: "array" } },
   skills: { file: "skills.json", fields: { periodLabel: "string", skills: "array" } },
   goals: { file: "goals.json", fields: { currentLabel: "string", goals: "array" } },
@@ -463,6 +463,7 @@ export function buildWidgetData(snapshot, {
   const widgetData = {
     hero: {
       title: target ? `TOEIC ${target} Project` : "TOEIC Goal Project",
+      dashboardSubtitle: current !== null && target !== null ? `${current} → ${target} · Live progress from Notion` : "Add your current score in Goals to begin.",
       current,
       target,
       progress,
