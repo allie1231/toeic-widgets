@@ -1,0 +1,8 @@
+{
+  "totalLabel": "75 min total",
+  "parts": [
+    { "name": "P5", "time": "9:38", "status": "Excellent", "tone": "success", "ariaLabel": "파트 5, 9분 38초, 매우 좋음" },
+    { "name": "P6", "time": "8:24", "status": "Good", "tone": "success", "ariaLabel": "파트 6, 8분 24초, 좋음" },
+    { "name": "P7", "time": "59:10", "status": "Need pace", "tone": "warning", "ariaLabel": "파트 7, 59분 10초, 속도 개선 필요" }
+  ]
+}

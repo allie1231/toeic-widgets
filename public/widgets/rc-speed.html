@@ -12,16 +12,18 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate aria-labelledby="widget-title">
-    <header class="widget-header">
-      <h1 class="widget-title" id="widget-title">RC Speed</h1>
-      <span class="widget-meta">75 min total</span>
-    </header>
+  <article class="widget-card" data-card data-animate data-source="../data/rc-speed.json" aria-labelledby="widget-title">
+    <div class="widget-content">
+      <header class="widget-header">
+        <h1 class="widget-title" id="widget-title">RC Speed</h1>
+        <span class="widget-meta" data-bind="totalLabel"></span>
+      </header>
 
-    <div class="timing-list">
-      <section class="timing-row" aria-label="파트 5, 9분 38초, 매우 좋음"><div class="timing-row__part">P5 <span class="status-tag status-tag--success">Excellent</span></div><strong class="metric-medium">9:38</strong></section>
-      <section class="timing-row" aria-label="파트 6, 8분 24초, 좋음"><div class="timing-row__part">P6 <span class="status-tag status-tag--success">Good</span></div><strong class="metric-medium">8:24</strong></section>
-      <section class="timing-row" aria-label="파트 7, 59분 10초, 속도 개선 필요"><div class="timing-row__part">P7 <span class="status-tag status-tag--warning">Need pace</span></div><strong class="metric-medium">59:10</strong></section>
+      <div class="timing-list">
+        <template data-repeat="parts">
+          <section class="timing-row" data-bind-aria-label="ariaLabel"><div class="timing-row__part"><span data-bind="name"></span><span class="status-tag" data-bind="status" data-class-bind="tone" data-class-prefix="status-tag--"></span></div><strong class="metric-medium" data-bind="time"></strong></section>
+        </template>
+      </div>
     </div>
   </article>
 </body>
