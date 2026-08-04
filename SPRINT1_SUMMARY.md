@@ -20,6 +20,10 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 - Verified automatic dark-mode and reduced-motion media rules.
 - Verified desktop two-column and mobile one-column layouts with no horizontal overflow.
 - Verified every required URL over HTTP and in a browser with no widget error state.
+- Published the production build to GitHub Pages and repeated URL, asset, JSON, browser, and console validation against the deployed site.
+- Added `WIDGETS.md` with all embed URLs, preview images, recommended sizes, JSON sources, and reserved future API routes.
+- Added a shared SVG favicon and page descriptions, and replaced native iframe preloading with viewport-driven dashboard loading.
+- Passed the required live Lighthouse thresholds for Index, Dashboard, and Hero.
 
 ## Screenshots
 
@@ -40,6 +44,7 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 │       ├── deploy.yml
 │       └── update-data.yml
 ├── assets/
+│   ├── favicon.svg
 │   ├── css/
 │   │   ├── theme.css
 │   │   ├── layout.css
@@ -59,9 +64,20 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 │   ├── streak.json
 │   └── study.json
 ├── docs/
-│   └── screenshots/
-│       ├── sprint1-dashboard-desktop.jpg
-│       └── sprint1-dashboard-mobile.jpg
+│   ├── screenshots/
+│   │   ├── sprint1-dashboard-desktop.jpg
+│   │   └── sprint1-dashboard-mobile.jpg
+│   └── widgets/
+│       ├── accuracy.jpg
+│       ├── coach.jpg
+│       ├── forecast.jpg
+│       ├── goals.jpg
+│       ├── heatmap.jpg
+│       ├── hero.jpg
+│       ├── rc-speed.jpg
+│       ├── streak.jpg
+│       ├── study-time.jpg
+│       └── weak-skills.jpg
 ├── scripts/
 │   ├── build-json.js
 │   ├── check-site.js
@@ -83,6 +99,7 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 ├── README.md
 ├── REPORT.md
 ├── SPRINT1_SUMMARY.md
+├── WIDGETS.md
 └── package.json
 ```
 
@@ -95,6 +112,9 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 - `docs/screenshots/sprint1-dashboard-desktop.jpg`
 - `docs/screenshots/sprint1-dashboard-mobile.jpg`
 - `scripts/check-site.js`
+- `WIDGETS.md`
+- `assets/favicon.svg`
+- `docs/widgets/*.jpg`
 
 ### Moved from `public/` to the repository root
 
@@ -158,6 +178,9 @@ Sprint 1 is complete. The approved landing/dashboard design was preserved while 
 | `9e03bcb` | `feat: rebuild coach widget` |
 | `83169b8` | `feat: rebuild weak skills widget` |
 | `8b9c214` | `docs: add Sprint 1 summary` |
+| `cbfbae2` | `fix: correct screenshot file extensions` |
+| `02511c8` | `docs: add widget embed catalog` |
+| `07b580b` | `perf: optimize production release gates` |
 
 ## Required URL verification
 
@@ -190,6 +213,25 @@ node --check scripts/update-dashboard.js
 ```
 
 Both GitHub Actions workflow files were also parsed as YAML, and the complete dashboard was rendered at desktop and mobile breakpoints.
+
+### Production deployment
+
+- Site: `https://allie1231.github.io/toeic-widgets/`
+- GitHub Pages workflow: passed validation, build, artifact upload, and deployment.
+- Public URL checks: 12/12 HTML pages returned HTTP 200.
+- Shared assets: all CSS, JavaScript, favicon, and ten JSON sources returned HTTP 200 with the expected content type.
+- Browser checks: all widgets completed JSON binding without an error state; all ten dashboard frames loaded after viewport traversal.
+- Console checks: zero application errors on every required public URL.
+
+### Live Lighthouse
+
+| Page | Performance | Accessibility | Best Practices | SEO |
+|---|---:|---:|---:|---:|
+| Index | 97 | 100 | 100 | 100 |
+| Dashboard | 97 | 100 | 100 | 100 |
+| Hero widget | 100 | 100 | 100 | 100 |
+
+Every score is above the requested release threshold.
 
 ## Remaining TODOs for Sprint 2
 
