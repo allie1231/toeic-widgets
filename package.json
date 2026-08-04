@@ -3,5 +3,10 @@
   "version": "2.0.0",
   "private": true,
   "type": "module",
-  "description": "잇재 스튜디오 · TOEIC 학습 대시보드와 노션 임베드 위젯 시스템"
+  "description": "잇재 스튜디오 · TOEIC 학습 대시보드와 노션 임베드 위젯 시스템",
+  "scripts": {
+    "data:check": "node scripts/build-json.js --check",
+    "data:build": "node scripts/build-json.js --input .cache/notion-snapshot.json --output public/data",
+    "data:update": "node scripts/update-dashboard.js"
+  }
 }
