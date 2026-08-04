@@ -12,18 +12,18 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate data-source="../data/hero.json" aria-labelledby="widget-title">
-    <div class="widget-content">
-      <header class="widget-header">
-        <h1 class="widget-title" id="widget-title" data-bind="title"></h1>
-        <span class="pill" data-bind="focus"></span>
+  <article class="card" data-card data-animate data-source="../data/hero.json" aria-labelledby="widget-title">
+    <div class="card__content">
+      <header class="header">
+        <h1 class="header__title" id="widget-title" data-bind="title"></h1>
+        <span class="chip" data-bind="focus"></span>
       </header>
 
-      <div class="score-lockup" data-bind-aria-label="scoreAriaLabel">
+      <section class="score-lockup" data-bind-aria-label="scoreAriaLabel">
         <strong class="metric-large" data-counter-bind="current"></strong>
         <span class="score-lockup__arrow" aria-hidden="true">→</span>
         <span class="score-lockup__target" data-bind="target"></span>
-      </div>
+      </section>
 
       <div class="progress progress--large hero-progress" data-progress-bind="progress" data-bind-aria-label="progressAriaLabel">
         <div class="progress__fill"></div>
