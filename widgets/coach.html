@@ -12,16 +12,16 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate data-source="../data/coach.json" aria-labelledby="widget-title">
-    <div class="widget-content">
-      <header class="widget-header">
-        <h1 class="widget-title" id="widget-title">AI Coach · Today</h1>
+  <article class="card" data-card data-animate data-source="../data/coach.json" aria-labelledby="widget-title">
+    <div class="card__content">
+      <header class="header">
+        <h1 class="header__title" id="widget-title">AI Coach · Today</h1>
         <time class="widget-meta" data-bind="dateLabel" data-bind-datetime="date"></time>
       </header>
 
       <section class="coach-focus" aria-label="오늘의 학습 초점">
         <h2 class="coach-skill" data-bind="focusSkill"></h2>
-        <span class="pill" data-bind="durationLabel"></span>
+        <span class="chip" data-bind="durationLabel"></span>
       </section>
 
       <section class="inset-panel" aria-labelledby="mission-title">
