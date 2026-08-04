@@ -3,7 +3,7 @@
   "current": 725,
   "target": 900,
   "progress": 80.6,
-  "remaining": 175,
+  "remainingLabel": "175 points left",
   "focus": "RC Focus",
   "scoreAriaLabel": "현재 점수 725점, 목표 점수 900점",
   "progressAriaLabel": "목표 점수 진행률 80.6%"

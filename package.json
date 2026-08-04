@@ -9,7 +9,7 @@
     "site:check": "node scripts/check-site.js",
     "data:fetch": "node scripts/fetch-notion.js --output raw.json",
     "data:check": "node scripts/build-json.js --check",
-    "data:build": "node scripts/build-json.js --input .cache/notion-snapshot.json --output data",
+    "data:build": "node scripts/build-json.js --input raw.json --output data",
     "data:update": "node scripts/update-dashboard.js"
   }
 }
