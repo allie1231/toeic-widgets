@@ -12,21 +12,21 @@
   <script src="../assets/js/common.js" defer></script>
 </head>
 <body class="widget-page">
-  <article class="widget-card" data-card data-animate data-source="../data/skills.json" aria-labelledby="widget-title">
-    <div class="widget-content">
-      <header class="widget-header">
-        <h1 class="widget-title" id="widget-title">Weak Skills</h1>
+  <article class="card" data-card data-animate data-source="../data/skills.json" aria-labelledby="widget-title">
+    <div class="card__content">
+      <header class="header">
+        <h1 class="header__title" id="widget-title">Weak Skills</h1>
         <span class="widget-meta" data-bind="periodLabel"></span>
       </header>
 
-      <div class="list">
+      <ol class="list">
         <template data-repeat="skills">
-          <section class="list-item" data-bind-aria-label="ariaLabel">
+          <li class="list-item" data-bind-aria-label="ariaLabel">
             <div class="list-item__header"><span class="list-item__label" data-bind="name"></span><span class="list-item__value" data-bind="countLabel"></span></div>
             <div class="progress" data-progress-bind="level" data-bind-aria-label="progressAriaLabel"><div class="progress__fill"></div></div>
-          </section>
+          </li>
         </template>
-      </div>
+      </ol>
     </div>
   </article>
 </body>

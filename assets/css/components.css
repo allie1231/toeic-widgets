@@ -1,6 +1,5 @@
 /* Card */
-.card,
-.widget-card {
+.card {
   width: min(100%, 520px);
   min-height: 230px;
   padding: clamp(20px, 5vw, 26px);
@@ -17,26 +16,22 @@
   transition: border-color var(--transition-fast), transform var(--transition-base), box-shadow var(--transition-base);
 }
 
-.card:hover,
-.widget-card:hover {
+.card:hover {
   border-color: color-mix(in srgb, var(--color-accent) 24%, var(--color-border));
   transform: translateY(-2px);
   box-shadow: 0 22px 52px rgba(15, 23, 42, 0.14);
 }
 
-.card:focus-within,
-.widget-card:focus-within {
+.card:focus-within {
   outline: 3px solid color-mix(in srgb, var(--color-accent) 34%, transparent);
   outline-offset: 3px;
 }
 
-.card[aria-busy="true"] .card__content,
-.widget-card[aria-busy="true"] .widget-content {
+.card[aria-busy="true"] .card__content {
   opacity: 0.45;
 }
 
-.card__content,
-.widget-content {
+.card__content {
   transition: opacity var(--transition-fast);
 }
 
@@ -53,7 +48,6 @@
 
 /* Header */
 .header,
-.widget-header,
 .widget-row,
 .metric-row {
   display: flex;
@@ -64,8 +58,7 @@
 
 /* Header text */
 .eyebrow,
-.header__title,
-.widget-title {
+.header__title {
   margin: 0;
   color: var(--color-muted);
   font-size: 0.75rem;
@@ -100,9 +93,7 @@
 /* Chip, Badge, and Button */
 .chip,
 .badge,
-.button,
-.pill,
-.status-tag {
+.button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -116,9 +107,7 @@
 }
 
 .chip,
-.badge,
-.pill,
-.status-tag {
+.badge {
   width: fit-content;
   min-height: 30px;
   padding: 6px 10px;
@@ -146,15 +135,13 @@
   outline-offset: 3px;
 }
 
-.badge--success,
-.status-tag--success {
+.badge--success {
   border-color: color-mix(in srgb, var(--color-success) 24%, transparent);
   background: color-mix(in srgb, var(--color-success) 12%, transparent);
   color: var(--color-success);
 }
 
-.badge--warning,
-.status-tag--warning {
+.badge--warning {
   border-color: color-mix(in srgb, var(--color-warning) 24%, transparent);
   background: color-mix(in srgb, var(--color-warning) 12%, transparent);
   color: var(--color-warning);
@@ -277,6 +264,8 @@
   display: grid;
   gap: var(--space-4);
   margin-top: var(--space-5);
+  padding: 0;
+  list-style: none;
 }
 
 .list-item {
@@ -586,8 +575,7 @@
   .heatmap__cell[data-level="3"] { background: #7c3aed; }
   .heatmap__cell[data-level="4"] { background: #6366f1; }
 
-  .card:hover,
-  .widget-card:hover {
+  .card:hover {
     box-shadow: 0 22px 52px rgba(0, 0, 0, 0.38);
   }
 }
