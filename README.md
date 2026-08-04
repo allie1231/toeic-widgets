@@ -75,29 +75,26 @@ JSON 요청은 캐시를 사용하지 않으므로 이후 Notion 자동 생성�
 
 ## 자동화 준비
 
-Phase 3에서는 Notion 연동 경계만 준비되어 있습니다. 현재 코드는 Notion API에 요청하지 않습니다.
+Notion의 Goals, Coach State, Skills, Study Log, Wrong Answers, Mock Tests가 모든 학습 값의 단일 원본입니다.
 
-- `fetch-notion.js` — 향후 Notion API 응답을 정규화된 스냅샷으로 바꿀 어댑터 경계입니다. 현재는 명시적인 미구현 오류를 반환합니다.
-- `build-json.js` — 정규화된 스냅샷을 10개 위젯 JSON으로 검증하고 안전하게 기록합니다.
-- `update-dashboard.js` — fetch → build → write 단계를 조율합니다. `NOTION_AUTOMATION_ENABLED=true`가 아니면 아무 파일도 변경하지 않습니다.
+- `fetch-notion.js` — Notion data-source API를 페이지네이션하고 typed property를 정규화해 `raw.json`을 만듭니다.
+- `build-json.js` — `raw.json` 하나에서 10개 위젯 JSON을 생성하고 검증합니다.
+- `update-dashboard.js` — fetch → raw → build → write 전체 파이프라인을 조율합니다.
 
-예정된 정규화 스냅샷 계약은 다음과 같습니다.
+정규화 스냅샷 계약은 다음과 같습니다.
 
 ```json
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
+  "source": "notion",
   "generatedAt": "ISO-8601 timestamp",
-  "widgets": {
-    "hero": {},
-    "coach": {},
-    "skills": {},
-    "goals": {},
-    "study": {},
-    "forecast": {},
-    "heatmap": {},
-    "rc-speed": {},
-    "accuracy": {},
-    "streak": {}
+  "sources": {
+    "goals": [],
+    "coach": [],
+    "skills": [],
+    "studyLog": [],
+    "wrongAnswers": [],
+    "mockTests": []
   }
 }
 ```
@@ -106,12 +103,14 @@ Phase 3에서는 Notion 연동 경계만 준비되어 있습니다. 현재 코�
 
 ```bash
 npm run site:check   # 페이지 링크, 공용 자산, 인라인 코드, JSON을 한 번에 검증
+npm test             # Notion adapter와 JSON builder 테스트
+npm run data:fetch   # Notion 데이터를 raw.json으로 정규화
 npm run data:check   # 현재 data/ JSON 검증
-npm run data:build   # .cache/notion-snapshot.json을 data/로 빌드
-npm run data:update  # 전체 자동화 실행; 현재는 기본적으로 안전하게 건너뜀
+npm run data:build   # raw.json을 data/로 빌드
+npm run data:update  # Notion fetch부터 widget JSON 생성까지 전체 실행
 ```
 
-`.github/workflows/update-data.yml`은 6시간 주기와 수동 실행을 준비하지만, 저장소 변수 `NOTION_AUTOMATION_ENABLED`가 `true`일 때만 job이 실행됩니다. 실제 연동을 구현한 뒤 `NOTION_TOKEN`, `NOTION_DATABASE_ID` secrets를 등록하고 마지막에 이 변수를 활성화합니다.
+`.github/workflows/update-data.yml`은 매일 09:17 KST에 실행되며 수동 `workflow_dispatch`도 지원합니다. 토큰은 GitHub Secret, 6개 data-source ID는 GitHub Variables에서만 주입됩니다. 전체 매핑과 운영 방법은 [NOTION_SYNC.md](NOTION_SYNC.md)를 참고하세요.
 
 ## 로컬 실행
 
