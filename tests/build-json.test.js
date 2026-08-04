@@ -63,6 +63,15 @@ test("builder derives every widget from normalized Notion records", () => {
   assert.equal(widgets.streak.days, 2);
 });
 
+test("a current goal score is not presented as a forecast without a mock test", () => {
+  const widgets = buildWidgetData(snapshot({
+    goals: [record("goal", { Goal: "900점", Current: 725, Target: 900 })],
+  }));
+
+  assert.equal(widgets.forecast.score, null);
+  assert.equal(widgets.forecast.trendLabel, "No mock tests yet");
+});
+
 test("raw snapshot validation rejects incomplete source collections", () => {
   const errors = validateRawSnapshot({ schemaVersion: 2, source: "notion", generatedAt: "bad", sources: {} });
   assert.ok(errors.some((error) => error.includes("generatedAt")));

@@ -207,7 +207,7 @@ function buildWeakSkills(records, skillIndex) {
     ];
   }
 
-  return ranked.map(({ name, count }) => {
+  const items = ranked.map(({ name, count }) => {
     const level = round((count / maximum) * 100);
     return {
       name,
@@ -217,6 +217,12 @@ function buildWeakSkills(records, skillIndex) {
       progressAriaLabel: `${name} 상대 취약도 ${level}%`,
     };
   });
+
+  const onboarding = [
+    { name: "Add another wrong answer", countLabel: "Notion", level: 0, ariaLabel: "Add another wrong answer in Notion", progressAriaLabel: "Onboarding step" },
+    { name: "Link errors to Skills", countLabel: "Notion", level: 0, ariaLabel: "Link errors to skills in Notion", progressAriaLabel: "Onboarding step" },
+  ];
+  return [...items, ...onboarding].slice(0, 3);
 }
 
 function latestRecord(records, propertyName) {
@@ -369,10 +375,10 @@ function orderedMocks(records) {
     .sort((left, right) => left.date.localeCompare(right.date));
 }
 
-function buildForecast(records, currentScore) {
+function buildForecast(records) {
   const mocks = orderedMocks(records).filter((entry) => entry.score !== null);
   const history = mocks.map((entry) => entry.score);
-  const score = history.at(-1) ?? currentScore;
+  const score = history.at(-1) ?? null;
   const trend = history.length > 1 ? history.at(-1) - history[0] : null;
   return {
     score,
@@ -492,7 +498,7 @@ export function buildWidgetData(snapshot, {
         })),
     },
     study: buildStudy(sources.studyLog, today),
-    forecast: buildForecast(sources.mockTests, current),
+    forecast: buildForecast(sources.mockTests),
     heatmap: buildHeatmap(sources.studyLog, today),
     "rc-speed": buildRcSpeed(sources.mockTests),
     accuracy: buildAccuracy(sources.mockTests),

@@ -7,6 +7,20 @@
       "level": 100,
       "ariaLabel": "형용사 오답 1회",
       "progressAriaLabel": "형용사 상대 취약도 100%"
+    },
+    {
+      "name": "Add another wrong answer",
+      "countLabel": "Notion",
+      "level": 0,
+      "ariaLabel": "Add another wrong answer in Notion",
+      "progressAriaLabel": "Onboarding step"
+    },
+    {
+      "name": "Link errors to Skills",
+      "countLabel": "Notion",
+      "level": 0,
+      "ariaLabel": "Link errors to skills in Notion",
+      "progressAriaLabel": "Onboarding step"
     }
   ]
 }
